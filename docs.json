@@ -3,120 +3,104 @@
   "theme": "maple",
   "name": "Michael Mancini - Mintlify",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#9A3412",
+    "light": "#EA580C",
+    "dark": "#9A3412"
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "anchors": [
       {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
+        "anchor": "Who",
+        "icon": "face-confused",
+        "pages": [
+          "michael/who"
         ]
       },
       {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
+        "anchor": "What",
+        "icon": "face-thinking",
+        "pages": [
+          "michael/what"
+        ]
+      },
+      {
+        "anchor": "Where",
+        "icon": "face-relieved",
+        "pages": [
+          "michael/where"
+        ]
+      },
+      {
+        "anchor": "When",
+        "icon": "face-party",
+        "pages": [
+          "michael/when"
+        ]
+      },
+      {
+        "anchor": "Why",
+        "icon": "face-sunglasses",
+        "pages": [
+          "michael/why"
+        ]
+      },
+      {
+        "anchor": "How",
+        "icon": "face-laugh-beam",
+        "pages": [
+          "michael/how"
+        ]
+      },
+      {
+        "anchor": "Cat",
+        "icon": "cat",
+        "pages": [
+          "michael/cat"
         ]
       }
     ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    "groups": [
+      {
+        "group": "Mintlify Feedback",
+        "pages": [
+          "mintlify/onboarding",
+          "mintlify/auth-status",
+          "mintlify/icons",
+          "mintlify/themes",
+          "mintlify/web-editor",
+          "mintlify/banner-component"
+        ]
+      },
+      {
+        "group": "Experience",
+        "pages": [
+          "experience/tech",
+          "experience/projects",
+          "experience/work"
+        ]
+      }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
   },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "github": "https://github.com/JazzyMichael"
     }
   }
 }
