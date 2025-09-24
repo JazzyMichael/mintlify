@@ -30,3 +30,9 @@ So if the variable remains at the default, the distance from the top is 6rem - 0
 This is the banner component in the public repo [https://github.com/mintlify/docs/blob/main/components/banner.mdx?plain=1](https://github.com/mintlify/docs/blob/main/components/banner.mdx?plain=1). There is nothing in this .mdx file that sets the variable to 77 or any differences in the structure compared to other components; so it's likely a problem in the interpreter layer that is not public.
 
 While inspecting the overall page structure, I found all 3 primary elements on the page (tabs, content-area, content-side-layout) are positioned absolutely/sticky and spaced using margin instead of a flex or grid layout. This is not an efficient approach to structuring a page layout and reduces developer velocity.
+
+### Open Github Issue
+
+[https://github.com/mintlify/themes/issues/5](https://github.com/mintlify/themes/issues/5)
+
+This layout structure also caused problems for other users where some of the content overlaps with the navbar. Likely caused by the same issue as the banner page, where the distance from the top is manually set incorrectly.

@@ -1,8 +1,53 @@
 ---
-title: 'Themes'
-description: 'Layouts vs Colors'
+title: "Themes"
+description: "Layouts vs Colors vs Navigation"
 ---
 
-## A custom job application and portfolio
+## Troublesome Themes
 
-Built using the Mintlify platform.
+This page details my experience with Mintlify themes.
+
+When I first loaded the themes page in the mintlify docs this is what I saw:
+
+~[Themes Page Screenshot](/images/themes.png)
+
+These preview cards look **beautiful** and I was excited to explore all of them and choose one for this project.
+
+I liked the Maple theme colors and layout because it matches the current season (Fall), and there are no tabs in the main content section (I don't think these are the best UX).
+
+I proceeded to change the 'theme' property in the `docs.json` file, and was dissapointed to find my project looked nothing like the preview. The preview pages for each theme not only change the layout and colors, but drastically change the structure of the `docs.json` file.
+
+I couldn't find anywhere that described the difference between each theme, and was confused about the colors and navigation items.
+
+After playing around I discovered the themes only affect a couple aspects of the layout (tab locations, inset sidebar, heading formatting) and in order to use the Maple theme in the preview I had to go to the public Mintlify/themes repo and look at the colors that were used.
+
+Navigation items like language, tabs, global anchors, Open API endpoints, etc... were completely different between each theme, so there was no way to see how the theme affects a layout without running everything locally and rebuilding the project each time to analyze the differences.
+
+I found this frustrating and figured it's a good opportunity to propose some changes.
+
+## Terrific Themes
+
+Separation between color palettes, layout structures, and navigation configuration.
+
+Templates for different layouts
+
+- Currently the only changes that are made when a theme changes
+- No documentation or examples describing the differences
+
+Templates for navigation items
+
+- Currently fully customizable regardless of theme, and doesn't change when a theme changes
+- The navigation configuration is different in each theme preview, misleading the user into thinking it is impacted by the theme selection when it is not.
+
+Color Palettes
+
+- Currently fully customizable regardless of theme and doesn't change when a theme changes
+- The colors are different in each theme preview, misleading the user into thinking there is a relationship between a theme and colors when there is none. The colors used in each theme preview are not provided in the documentation or in the content of the theme preview.
+
+#### Improvements
+
+The themes page in the Mintlify documentation can include tabs or sections for each of these 3 aspects.
+
+Examples of different navigation properties can be shown separate from the layout changes.
+
+Theme previews can be based on the same navigation configuration, clearly showing the unique aspects of each theme.

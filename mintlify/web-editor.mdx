@@ -42,18 +42,6 @@ However the `docs.json` schema does not support navigation with both anchors and
 
 The workaround is to put the anchor items in a group named " " (a single whitespace). The downside is the "anchor" items no longer have the associated selected styling, so they look the same as group items.
 
-# Dashboard Sidebar
-
-Missed a great opportunity to add a simple animation to the expand and collapse states of the sidebar in the dashboard.
-
-sidenav:
-
-- transition: width 150ms ease-in;
-  content:
-- transition: width 150ms ease-in, margin-left 150ms ease-in;
-  notes:
-- flexbox simplifies this. Instead of having manual values of margin equal to the sidenav width, we can just set the content container to be full width so it automatically adjusts as the sidenav width changes. This removes the overhead of managing margin, and removes the need for a separate transition to be applied to the content container (the transition in the sidenav causes all children in the flexbox scope to adjust automatically at the same transition/animation speed)
-
 ### Last Synced
 
 The "Last Synced" time doesn't automatically update. I discovered this when it said it was last synced 5 minutes ago even though I've been editing for 30 minutes. It only updates when the page is refreshed.

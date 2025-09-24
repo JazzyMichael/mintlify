@@ -23,7 +23,7 @@
         ]
       },
       {
-        "group": "Mintlify Feedback",
+        "group": "Mintlify",
         "pages": [
           "mintlify/onboarding",
           "mintlify/auth-status",

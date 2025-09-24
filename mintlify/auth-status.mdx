@@ -1,8 +1,26 @@
 ---
-title: 'Auth Status'
-description: 'Authentication'
+title: "Auth Status"
+description: "I am logged in or not?"
 ---
 
-## A custom job application and portfolio
+## Context
 
-Built using the Mintlify platform.
+The Mintlify documentation and dashboard have different subdomains, so it is reasonable for a user to be logged into the dashboard part of the site without the documentation part recognizing the authentication information.
+
+This is common in many sites that have different subdomains and CMS configurations managed by different teams, and while it is easy to set up by checking cookies in the hosting server or middleware, it is reasonable that this is not a priority or something worth implementing.
+
+However there is a problem.
+
+The documentation has a "Get Started" link pinned to the sidenav footer that is always visible.
+
+This takes the user to the login page, which has the same subdomain as the dashboard. Even if the user is currently logged in, the login page does not redirect and allows the user to enter login credentials and attempt to log in again.
+
+Since the login page has the same subdomain as the dashboard, the auth status can easily be accessed on the login page and redirect the user to the main dashboard page so they do not get stuck on the login page while already authenticated.
+
+I played around with this by entering different credentials than my currently logged-in user and was still able to update the dashboard despite not technically being logged in.
+
+## Solution
+
+Add a redirect to the login page if a user is already logged in. I am an expert in the Mintlify tech stack and can implement this for you!
+
+Let's get in touch and set up an interview - thejazzymichael@gmail.com

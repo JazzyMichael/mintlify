@@ -1,8 +1,36 @@
 ---
-title: 'Onboarding'
-description: 'All aboard!'
+title: "Onboarding"
+description: "All aboard!"
 ---
 
-## A custom job application and portfolio
+# Goal
 
-Built using the Mintlify platform.
+I wanted to submit a thoughtful application to the open Mintlify position by using the platform to create a portfolio/cover-letter site in the form of technical documentation.
+
+I expected this to be quick, but I encountered a few points of friction that were not ideal.
+
+During the onboarding process there was no option to specify a name for the git repo, so it was created with the default name "docs". I had to manually change the repo name in my github account, which caused errors in the Web Editor because it was still trying to access the "docs" repo instead of the re-named repo. I had to change the settings in Mintlify to reference the new name to fix this.
+
+Mintlify is a great product, and features like MCP servers, llms.txt, third-party integrations, embedded react components, etc... make many people like myself willing to put up with small onboarding inefficiencies because there is a lot of value provided by the platform.
+
+We can look at existing customers and see how prevalent this is, if many customers have changed the repo name or encountered similar issues we can add the edit option during the onboarding flow while keeping "docs" as the suggested/default name.
+
+# Sidenav collapse-expand animation
+
+I thought this has become standard practice! A simple animation to the expanded and collapsed states of the sidebar in the dashboard adds just the right amount of flair to the overall UX to make the product feel high-quality and elegant.
+
+I was able to add the animation by adding a CSS property to 2 elements
+
+```css Sidenav
+transition: width 150ms ease-in;
+```
+
+```css Content
+transition: width 150ms ease-in, margin-left 150ms ease-in;
+```
+
+If we change the layout to use flexbox, this can be simplified to only one CSS property on the sidenav because the other flex-children automatically adjust their size.
+
+This also simplifies the overall developer workflow by removing the manual aspect of setting the margin equal to the sidenav width.
+
+Coordination between elements that are siblings of the same flexbox container are always syncronized and easily adjustable to accomodate design changes without managing manual values between multiple elements for changing margin, width, and transition properties.
