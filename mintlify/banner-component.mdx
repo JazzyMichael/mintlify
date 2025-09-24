@@ -1,9 +1,32 @@
 ---
-title: 'Banner Component'
-description: 'Problems with this page.'
+title: "Banner Component"
+description: "2 problems with this page"
 ---
 
-## A custom job application and portfolio
+Docs link: [https://www.mintlify.com/docs/components/banner](https://www.mintlify.com/docs/components/banner)
 
-Built using the Mintlify platform.
+This is a screenshot of all the content on the banner page:
 
+![Banner Component Page Screenshot](/images/banner-page.png)
+
+## Lacking a Visual Example
+
+Users can't see what it looks like!
+
+## Overlapping Layout
+
+In the upper right corner, the page outline is overlapping with the top navigation.
+
+This UI bug only appears on this specific page, not any of the other components or pages in the Mintlify documentation.
+
+The cause is a css variable named `--sidenav-move-up` being set to 77px on this page, when it remains at the default value of 0 on every other page.
+
+This "table of contents" is using absolute/sticky positioning and the top property is set to `top-[calc(6rem-var(--sidenav-move-up, 0px))]`.
+
+This means "base" distance from top is 6rem, then this element subtracts the value of the `--sidenav-move-up` variable, and if that variable is not set it defaults to 0.
+
+So if the variable remains at the default, the distance from the top is 6rem - 0. In the banner page the variable is set to 77 causing the distance from the top to be 6rem - 77. This reduces the distance from the top causing the overlap. This variable is being set only on the banner page, and remains at the default of 0 on all other pages.
+
+This is the banner component in the public repo [https://github.com/mintlify/docs/blob/main/components/banner.mdx?plain=1](https://github.com/mintlify/docs/blob/main/components/banner.mdx?plain=1). There is nothing in this .mdx file that sets the variable to 77 or any differences in the structure compared to other components; so it's likely a problem in the interpreter layer that is not public.
+
+While inspecting the overall page structure, I found all 3 primary elements on the page (tabs, content-area, content-side-layout) are positioned absolutely/sticky and spaced using margin instead of a flex or grid layout. This is not an efficient approach to structuring a page layout and reduces developer velocity.

@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "maple",
-  "name": "Michael Mancini - Mintlify",
+  "name": "Michael Mancini",
   "colors": {
     "primary": "#9A3412",
     "light": "#EA580C",
@@ -9,58 +9,19 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "anchors": [
+    "groups": [
       {
-        "anchor": "Who",
-        "icon": "face-confused",
+        "group": " ",
         "pages": [
-          "michael/who"
-        ]
-      },
-      {
-        "anchor": "What",
-        "icon": "face-thinking",
-        "pages": [
-          "michael/what"
-        ]
-      },
-      {
-        "anchor": "Where",
-        "icon": "face-relieved",
-        "pages": [
-          "michael/where"
-        ]
-      },
-      {
-        "anchor": "When",
-        "icon": "face-party",
-        "pages": [
-          "michael/when"
-        ]
-      },
-      {
-        "anchor": "Why",
-        "icon": "face-sunglasses",
-        "pages": [
-          "michael/why"
-        ]
-      },
-      {
-        "anchor": "How",
-        "icon": "face-laugh-beam",
-        "pages": [
-          "michael/how"
-        ]
-      },
-      {
-        "anchor": "Cat",
-        "icon": "cat",
-        "pages": [
+          "michael/who",
+          "michael/what",
+          "michael/where",
+          "michael/when",
+          "michael/why",
+          "michael/how",
           "michael/cat"
         ]
-      }
-    ],
-    "groups": [
+      },
       {
         "group": "Mintlify Feedback",
         "pages": [
@@ -85,6 +46,14 @@
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "thejazzymichael@gmail.com",
+        "href": "mailto:thejazzymichael@gmail.com"
+      }
+    ]
   },
   "contextual": {
     "options": [

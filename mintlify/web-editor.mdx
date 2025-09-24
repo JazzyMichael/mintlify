@@ -1,8 +1,61 @@
 ---
-title: 'Web Editor'
-description: 'Work in progress'
+title: "Web Editor"
+description: "Work in progress"
 ---
 
-## A custom job application and portfolio
+# Preview `docs.json`
 
-Built using the Mintlify platform.
+Using the Web Editor in the Mintlify Dashboard is difficult for updating the `docs.json` file because there is no preview of the navigation items or theme layout, so the user is unable to see any changes.
+
+The markdown editor built with **tiptap** provides a great interface to update and preview each page, however `.json` files disable the preview button.
+
+![Disabled Preview Button Screenshot](/images/disabled-preview.png)
+
+This can be updated to include a specific preview option for docs.json that shows just the sidenav in place of the disabled button.
+
+We can also build an interface specifically for configuring `docs.json`. We can abstract all the settings into a no-code editor using basic form elements to add/remove/update everything. I would absolutely LOVE to build this!
+
+This will not only make it easier to edit the global settings, but it can also provide descriptions for each property so the user doesn't have to go back and forth between the list of global settings properties, a JSON validator, published previews, and the web editor.
+
+# Navigation
+
+I wanted the main sidenav to have a few items at the top that do not belong to a group, as well as a few groups of items.
+
+The templates used global anchors, which are only used for external links, and tabs, which is not an ideal structure for this content.
+
+Fortunately the **Navigation** page in the docs shows an example using anchors as a direct child of navigation, as well as groups! I added both to the navigation property like this:
+
+```json docs.json
+{
+  ...,
+  "navigation": {
+    "anchors": [...],
+    "groups": [...]
+  },
+  ...
+}
+```
+
+However the `docs.json` schema does not support navigation with both anchors and groups. The output displayed the anchors, but instead of the groups it displayed the selected anchor item like this:
+
+![Sidenav Screenshot](/images/anchor-items.png)
+
+The workaround is to put the anchor items in a group named " " (a single whitespace). The downside is the "anchor" items no longer have the associated selected styling, so they look the same as group items.
+
+# Dashboard Sidebar
+
+Missed a great opportunity to add a simple animation to the expand and collapse states of the sidebar in the dashboard.
+
+sidenav:
+
+- transition: width 150ms ease-in;
+  content:
+- transition: width 150ms ease-in, margin-left 150ms ease-in;
+  notes:
+- flexbox simplifies this. Instead of having manual values of margin equal to the sidenav width, we can just set the content container to be full width so it automatically adjusts as the sidenav width changes. This removes the overhead of managing margin, and removes the need for a separate transition to be applied to the content container (the transition in the sidenav causes all children in the flexbox scope to adjust automatically at the same transition/animation speed)
+
+### Last Synced
+
+The "Last Synced" time doesn't automatically update. I discovered this when it said it was last synced 5 minutes ago even though I've been editing for 30 minutes. It only updates when the page is refreshed.
+
+This can be updated to compute the difference between the last synced timestamp and current time every couple minutes to provide an accurate metric without confusion.
